@@ -1,0 +1,24 @@
+#!/bin/bash
+
+#TODO
+#
+#optimize file saving, instead of downloading for each directory,
+#just download once, then copy to each dir.
+#
+#put wget to quiet, and echo $num every loop
+
+orisite="https://www.dermatlas.net/atlas/imageinfo.cfm?image="
+
+for num in {1..1500}
+do
+#num="287"
+wget --no-clobber --convert-links --random-wait -E -e robots=off -U mozilla $orisite$num -O Output
+sitename="https://www.dermatlas.net"
+imagelink=$(grep -Eoh "/images/.*.[JPGjpgPNGpng]\"" Output | sed 's/400\/// ; s/\"//')
+filename=$(echo $imagelink | sed -s 's/\/images\///')
+	for category in `grep -iEo "lesiontype&value=.*\"" Output | tr -s '[[:space:]]' '\n' | grep -o "value=.*[^\"]" | sed 's/value=//'`
+	do
+		mkdir $category
+		wget --no-clobber --convert-links --random-wait -E -e robots=off -U mozilla $sitename$imagelink -O $category/$filename
+	done
+done
