@@ -9,7 +9,7 @@ The main target of this project are people with acne problems in their life. Bas
 
 ## Here are the members:
 
-- C2297F2541 - Ardlyansyah - Universitas Pembangunan Nasional Veteran Yogyakarta
+- C2297F2541 - <a href="https://github.com/ardlyansyahh">Ardlyansyah </a> - Universitas Pembangunan Nasional Veteran Yogyakarta
 - A2001F0019 - I Made Raditya Bayu Pangestu - Institut Pertanian Bogor
 - A2002F0119 - Muhammad Rayhan Ravianda - Institut Teknologi Bandung
 - M2315F2762 - Muhammad Rizqi Assabil - Universitas Sriwijaya
